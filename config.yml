@@ -1,0 +1,17 @@
+es:
+  host: '192.168.0.105'
+  port: '9200'
+  cluster: 'superheromatch'
+  index: 'superhero'
+
+db:
+  host: 'localhost'
+  port: 3306
+  user: 'root'
+  password: 'Kolian18**'
+  name: 'municipality'
+
+consumer:
+  brokers: ['192.168.0.105:9092']
+  topic: 'update.municipality.profilepicture'
+  group_id: 'consumer-update-media-group'
