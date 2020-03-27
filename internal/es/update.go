@@ -18,6 +18,8 @@ import (
 	"github.com/superhero-match/consumer-update-media/internal/es/model"
 )
 
+const mainProfilePicturePosition = int64(0)
+
 // UpdateProfilePicture updates profile picture.
 func (es *ES) UpdateProfilePicture(superheroID string, pp model.ProfilePicture) error {
 	superhero, err := es.GetSuperhero(superheroID)
@@ -28,6 +30,10 @@ func (es *ES) UpdateProfilePicture(superheroID string, pp model.ProfilePicture) 
 	sourceID, err := es.GetDocumentID(superheroID)
 	if err != nil {
 		return err
+	}
+
+	if pp.Position == mainProfilePicturePosition {
+		return updateMainProfilePic(es, sourceID, pp)
 	}
 
 	if len(superhero.ProfilePictures) == 0 {
@@ -54,6 +60,22 @@ func updateProfilePics(es *ES, sourceID string, pps []model.ProfilePicture, pp m
 		Id(sourceID).
 		Doc(map[string]interface{}{
 			"profile_pics": pps,
+			"updated_at":   pp.CreatedAt,
+		}).
+		Do(context.Background())
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func updateMainProfilePic(es *ES, sourceID string, pp model.ProfilePicture) error {
+	_, err := es.Client.Update().
+		Index(es.Index).
+		Id(sourceID).
+		Doc(map[string]interface{}{
+			"main_profile_pic_url": pp.URL,
 			"updated_at":   pp.CreatedAt,
 		}).
 		Do(context.Background())
