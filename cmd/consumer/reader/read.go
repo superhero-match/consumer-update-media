@@ -101,6 +101,21 @@ func (r *Reader) Read() error {
 			return err
 		}
 
+		keys := make([]string, 0)
+		keys = append(keys, fmt.Sprintf(r.Cache.SuggestionKeyFormat, pp.SuperheroID))
+
+		err = r.Cache.DeleteSuperhero(keys)
+		if err != nil {
+			fmt.Println("Cache")
+			fmt.Println(err)
+			err = r.Consumer.Consumer.Close()
+			if err != nil {
+				return err
+			}
+
+			return err
+		}
+
 		err = r.Consumer.Consumer.CommitMessages(ctx, m)
 		if err != nil {
 			err = r.Consumer.Consumer.Close()

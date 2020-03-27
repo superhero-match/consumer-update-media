@@ -11,47 +11,40 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-package reader
+package cache
 
 import (
-	"github.com/superhero-match/consumer-update-media/internal/cache"
+	"fmt"
+
+	"github.com/go-redis/redis"
+
 	"github.com/superhero-match/consumer-update-media/internal/config"
-	"github.com/superhero-match/consumer-update-media/internal/consumer"
-	"github.com/superhero-match/consumer-update-media/internal/db"
-	"github.com/superhero-match/consumer-update-media/internal/es"
 )
 
-// Reader holds all the data relevant.
-type Reader struct {
-	DB       *db.DB
-	Cache    *cache.Cache
-	ES       *es.ES
-	Consumer *consumer.Consumer
+// Cache is the Redis client.
+type Cache struct {
+	Redis               *redis.Client
+	SuggestionKeyFormat string
 }
 
-// NewReader configures Reader.
-func NewReader(cfg *config.Config) (r *Reader, err error) {
-	dbs, err := db.NewDB(cfg)
+// NewCache creates a client connection to Redis.
+func NewCache(cfg *config.Config) (cache *Cache, err error) {
+	client := redis.NewClient(&redis.Options{
+		Addr:         fmt.Sprintf("%s%s", cfg.Cache.Address, cfg.Cache.Port),
+		Password:     cfg.Cache.Password,
+		DB:           cfg.Cache.DB,
+		PoolSize:     cfg.Cache.PoolSize,
+		MinIdleConns: cfg.Cache.MinimumIdleConnections,
+		MaxRetries:   cfg.Cache.MaximumRetries,
+	})
+
+	_, err = client.Ping().Result()
 	if err != nil {
 		return nil, err
 	}
 
-	ch, err := cache.NewCache(cfg)
-	if err != nil {
-		return nil, err
-	}
-
-	e, err := es.NewES(cfg)
-	if err != nil {
-		return nil, err
-	}
-
-	c := consumer.NewConsumer(cfg)
-
-	return &Reader{
-		DB:       dbs,
-		Cache:    ch,
-		ES:       e,
-		Consumer: c,
+	return &Cache{
+		Redis:               client,
+		SuggestionKeyFormat: cfg.Cache.SuggestionKeyFormat,
 	}, nil
 }

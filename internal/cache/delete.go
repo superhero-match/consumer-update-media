@@ -11,27 +11,18 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-package config
+package cache
 
 import (
-	"github.com/jinzhu/configor"
+	"github.com/go-redis/redis"
 )
 
-// Config holds the configuration.
-type Config struct {
-	ES       *ES
-	Cache    *Cache
-	Consumer *Consumer
-	DB       *DB
-}
-
-// NewConfig returns the configuration.
-func NewConfig() (cnf *Config, e error) {
-	var cfg Config
-
-	if err := configor.Load(&cfg, "config.yml"); err != nil {
-		return nil, err
+// DeleteSuperhero deletes Superhero from Redis cache because Superhero data was partially updated.
+func (c *Cache) DeleteSuperhero(keys []string) error {
+	err := c.Redis.Del(keys...).Err()
+	if err != nil && err != redis.Nil {
+		return err
 	}
 
-	return &cfg, nil
+	return nil
 }
