@@ -15,13 +15,19 @@ cache:
   suggestion_key_format: 'suggestion.%s'
 
 db:
-  host: 'localhost'
+  host: '192.168.0.101'
   port: 3306
-  user: 'root'
-  password: 'Kolian18**'
+  user: 'dev'
+  password: 'password'
   name: 'municipality'
 
 consumer:
   brokers: ['192.168.0.105:9092']
   topic: 'update.municipality.profilepicture'
   group_id: 'consumer-update-media-group'
+
+health:
+  address: '192.168.0.101'
+  port: ':8100'
+  shutdown_endpoint: '/api/v1/consumer_update_media_health/shutdown'
+  content_type: 'application/json'

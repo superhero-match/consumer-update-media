@@ -11,35 +11,12 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-package main
+package config
 
-import (
-	"github.com/superhero-match/consumer-update-media/cmd/consumer/reader"
-	"github.com/superhero-match/consumer-update-media/internal/config"
-	"github.com/superhero-match/consumer-update-media/internal/health"
-)
-
-func main() {
-	cfg, err := config.NewConfig()
-	if err != nil {
-		panic(err)
-	}
-
-	client := health.NewClient(cfg)
-
-	r, err := reader.NewReader(cfg)
-	if err != nil {
-		_ = client.ShutdownHealthServer()
-
-		panic(err)
-	}
-
-	err = r.Read()
-	if err != nil {
-		_ = client.ShutdownHealthServer()
-
-		panic(err)
-	}
-
-	_ = client.ShutdownHealthServer()
+// Health holds configuration for health server.
+type Health struct {
+	Address          string `env:"HEALTH_SERVER_ADDRESS" default:"192.168.0.101"`
+	Port             string `env:"HEALTH_SERVER_PORT" default:":8100"`
+	ShutdownEndpoint string `env:"HEALTH_SERVER_SHUTDOWN_ENDPOINT" default:"/api/v1/consumer_update_media_health/shutdown"`
+	ContentType      string `env:"HEALTH_SERVER_CONTENT_TYPE" default:"application/json"`
 }

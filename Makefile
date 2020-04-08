@@ -13,7 +13,7 @@ dkb:
 	docker build -t consumer-update-media .
 
 dkr:
-	docker run consumer-update-media
+	docker run -p "8100:8100" consumer-update-media
 
 launch: dkb dkr
 

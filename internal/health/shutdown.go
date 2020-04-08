@@ -11,35 +11,19 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-package main
+package health
 
 import (
-	"github.com/superhero-match/consumer-update-media/cmd/consumer/reader"
-	"github.com/superhero-match/consumer-update-media/internal/config"
-	"github.com/superhero-match/consumer-update-media/internal/health"
+	"net/http"
 )
 
-func main() {
-	cfg, err := config.NewConfig()
+// ShutdownHealthServer sends shutdown signal to health server. This shutdown signal is sent only when consumer
+// is panicking and is about to be shutdown to notify loadbalancer that consumer is un-healthy.
+func (c *Client) ShutdownHealthServer () error {
+	_, err := http.Post(c.HealthServerURL, c.ContentType, nil)
 	if err != nil {
-		panic(err)
+		return err
 	}
 
-	client := health.NewClient(cfg)
-
-	r, err := reader.NewReader(cfg)
-	if err != nil {
-		_ = client.ShutdownHealthServer()
-
-		panic(err)
-	}
-
-	err = r.Read()
-	if err != nil {
-		_ = client.ShutdownHealthServer()
-
-		panic(err)
-	}
-
-	_ = client.ShutdownHealthServer()
+	return nil
 }
