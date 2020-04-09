@@ -27,7 +27,6 @@ consumer:
   group_id: 'consumer-update-media-group'
 
 health:
-  address: '192.168.0.101'
   port: ':8100'
   shutdown_endpoint: '/api/v1/consumer_update_media_health/shutdown'
   content_type: 'application/json'
