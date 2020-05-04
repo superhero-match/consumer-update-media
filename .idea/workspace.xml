@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b306ec28-984d-4a25-ae6c-6a599efcc8ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/health.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/health.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/health/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/health/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +87,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/superhero-match/consumer-update-media/cmd/health">
+  <component name="RunManager" selected="Go Build.go build github.com/superhero-match/consumer-update-media/cmd/consumer">
     <configuration name="go build github.com/superhero-match/consumer-update-media/cmd/consumer" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="consumer-update-media" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -110,8 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build github.com/superhero-match/consumer-update-media/cmd/health" />
         <item itemvalue="Go Build.go build github.com/superhero-match/consumer-update-media/cmd/consumer" />
+        <item itemvalue="Go Build.go build github.com/superhero-match/consumer-update-media/cmd/health" />
       </list>
     </recent_temporary>
   </component>
@@ -127,22 +125,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585038918392" />
-    <state width="1323" height="321" key="GridCell.Tab.0.bottom" timestamp="1586346755605">
+    <state width="1323" height="321" key="GridCell.Tab.0.bottom" timestamp="1587726281991">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="321" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586346755605" />
-    <state width="1323" height="321" key="GridCell.Tab.0.center" timestamp="1586346755604">
+    <state width="1323" height="321" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587726281991" />
+    <state width="1323" height="321" key="GridCell.Tab.0.center" timestamp="1587726281990">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="321" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586346755604" />
-    <state width="1323" height="321" key="GridCell.Tab.0.left" timestamp="1586346755604">
+    <state width="1323" height="321" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587726281990" />
+    <state width="1323" height="321" key="GridCell.Tab.0.left" timestamp="1587726281989">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="321" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586346755604" />
-    <state width="1323" height="321" key="GridCell.Tab.0.right" timestamp="1586346755605">
+    <state width="1323" height="321" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587726281989" />
+    <state width="1323" height="321" key="GridCell.Tab.0.right" timestamp="1587726281990">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="321" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586346755605" />
+    <state width="1323" height="321" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587726281990" />
     <state width="196" height="539" key="HiddenNamespacesPopup" timestamp="1585038875737">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
