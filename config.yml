@@ -1,11 +1,11 @@
 es:
-  host: '192.168.0.64'
+  host: '192.168.1.229'
   port: '9200'
   cluster: 'superheromatch'
   index: 'superhero'
 
 cache:
-  address: '192.168.0.64'
+  address: '192.168.1.229'
   port: ':6379'
   password: 'Awesome85**'
   db: 0
@@ -15,14 +15,14 @@ cache:
   suggestion_key_format: 'suggestion.%s'
 
 db:
-  host: '192.168.0.64'
+  host: '192.168.1.229'
   port: 3306
   user: 'dev'
   password: 'Awesome85**'
   name: 'municipality'
 
 consumer:
-  brokers: ['192.168.0.64:9092']
+  brokers: ['192.168.1.229:9092']
   topic: 'update.municipality.profilepicture'
   group_id: 'consumer.update.media.group'
 
