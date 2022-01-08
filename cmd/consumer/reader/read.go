@@ -26,13 +26,13 @@ import (
 	esm "github.com/superhero-match/consumer-update-media/internal/es/model"
 )
 
-// Read consumes the Kafka topic and stores the newly registered superhero to DB and Elasticsearch.
-func (r *Reader) Read() error {
+// Read consumes the Kafka topic and updates profiles pictures in DB and Elasticsearch.
+func (r *reader) Read() error {
 	ctx := context.Background()
 
 	for {
 		fmt.Print("before FetchMessage")
-		m, err := r.Consumer.Consumer.FetchMessage(ctx)
+		m, err := r.Consumer.FetchMessage(ctx)
 		fmt.Print("after FetchMessage")
 		if err != nil {
 			r.Logger.Error(
@@ -41,7 +41,7 @@ func (r *Reader) Read() error {
 				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
 			)
 
-			err = r.Consumer.Consumer.Close()
+			err = r.Consumer.Close()
 			if err != nil {
 				r.Logger.Error(
 					"failed to close consumer",
@@ -72,7 +72,7 @@ func (r *Reader) Read() error {
 				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
 			)
 
-			err = r.Consumer.Consumer.Close()
+			err = r.Consumer.Close()
 			if err != nil {
 				r.Logger.Error(
 					"failed to close consumer",
@@ -91,7 +91,7 @@ func (r *Reader) Read() error {
 			URL:         pp.URL,
 			Position:    pp.Position,
 			CreatedAt:   pp.CreatedAt,
-		}, )
+		})
 		if err != nil {
 			r.Logger.Error(
 				"failed to store profile picture to database",
@@ -99,7 +99,7 @@ func (r *Reader) Read() error {
 				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
 			)
 
-			err = r.Consumer.Consumer.Close()
+			err = r.Consumer.Close()
 			if err != nil {
 				r.Logger.Error(
 					"failed to close consumer",
@@ -129,7 +129,7 @@ func (r *Reader) Read() error {
 				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
 			)
 
-			err = r.Consumer.Consumer.Close()
+			err = r.Consumer.Close()
 			if err != nil {
 				r.Logger.Error(
 					"failed to close consumer",
@@ -144,7 +144,7 @@ func (r *Reader) Read() error {
 		}
 
 		keys := make([]string, 0)
-		keys = append(keys, fmt.Sprintf(r.Cache.SuggestionKeyFormat, pp.SuperheroID))
+		keys = append(keys, fmt.Sprintf(r.SuggestionKeyFormat, pp.SuperheroID))
 
 		err = r.Cache.DeleteSuperhero(keys)
 		if err != nil {
@@ -154,7 +154,7 @@ func (r *Reader) Read() error {
 				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
 			)
 
-			err = r.Consumer.Consumer.Close()
+			err = r.Consumer.Close()
 			if err != nil {
 				r.Logger.Error(
 					"failed to close consumer",
@@ -168,7 +168,7 @@ func (r *Reader) Read() error {
 			return err
 		}
 
-		err = r.Consumer.Consumer.CommitMessages(ctx, m)
+		err = r.Consumer.CommitMessages(ctx, m)
 		if err != nil {
 			r.Logger.Error(
 				"failed to commit message",
@@ -176,7 +176,7 @@ func (r *Reader) Read() error {
 				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
 			)
 
-			err = r.Consumer.Consumer.Close()
+			err = r.Consumer.Close()
 			if err != nil {
 				r.Logger.Error(
 					"failed to close consumer",
