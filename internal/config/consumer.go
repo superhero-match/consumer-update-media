@@ -15,7 +15,7 @@ package config
 
 // Consumer holds the configuration values for the Kafka consumer.
 type Consumer struct {
-	Brokers []string `env:"KAFKA_BROKERS" yaml:"brokers" default:"[192.168.0.64:9092]"`
+	Brokers []string `env:"KAFKA_BROKERS" yaml:"brokers" default:"[192.168.1.229:9092]"`
 	Topic   string   `env:"KAFKA_UPDATE_MUNICIPALITY_PROFILE_PICTURE_TOPIC" yaml:"topic" default:"update.municipality.profilepicture"`
 	GroupID string   `env:"KAFKA_CONSUMER_UPDATE_MEDIA_GROUP_ID" yaml:"group_id" default:"consumer.update.media.group"`
 }
