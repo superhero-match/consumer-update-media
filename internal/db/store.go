@@ -18,7 +18,7 @@ import (
 )
 
 // StoreProfilePicture saves new profile picture.
-func(db *DB) StoreProfilePicture (pp model.ProfilePicture) error {
+func (db *db) StoreProfilePicture(pp model.ProfilePicture) error {
 	_, err := db.stmtInsertNewProfilePicture.Exec(
 		pp.SuperheroID,
 		pp.URL,
@@ -31,4 +31,3 @@ func(db *DB) StoreProfilePicture (pp model.ProfilePicture) error {
 
 	return nil
 }
-
