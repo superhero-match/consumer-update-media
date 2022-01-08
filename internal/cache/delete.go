@@ -18,7 +18,7 @@ import (
 )
 
 // DeleteSuperhero deletes Superhero from Redis cache because Superhero data was partially updated.
-func (c *Cache) DeleteSuperhero(keys []string) error {
+func (c *cache) DeleteSuperhero(keys []string) error {
 	err := c.Redis.Del(keys...).Err()
 	if err != nil && err != redis.Nil {
 		return err

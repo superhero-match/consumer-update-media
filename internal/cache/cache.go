@@ -21,14 +21,18 @@ import (
 	"github.com/superhero-match/consumer-update-media/internal/config"
 )
 
-// Cache is the Redis client.
-type Cache struct {
-	Redis               *redis.Client
-	SuggestionKeyFormat string
+// Cache interface defines cache methods.
+type Cache interface {
+	DeleteSuperhero(keys []string) error
+}
+
+// cache is the Redis client.
+type cache struct {
+	Redis *redis.Client
 }
 
 // NewCache creates a client connection to Redis.
-func NewCache(cfg *config.Config) (cache *Cache, err error) {
+func NewCache(cfg *config.Config) (c Cache, err error) {
 	client := redis.NewClient(&redis.Options{
 		Addr:         fmt.Sprintf("%s%s", cfg.Cache.Address, cfg.Cache.Port),
 		Password:     cfg.Cache.Password,
@@ -43,8 +47,7 @@ func NewCache(cfg *config.Config) (cache *Cache, err error) {
 		return nil, err
 	}
 
-	return &Cache{
-		Redis:               client,
-		SuggestionKeyFormat: cfg.Cache.SuggestionKeyFormat,
+	return &cache{
+		Redis: client,
 	}, nil
 }
