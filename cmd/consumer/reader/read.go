@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2019 - 2021 MWSOFT
+  Copyright (C) 2019 - 2022 MWSOFT
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -21,7 +21,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/superhero-match/consumer-update-media/internal/consumer/model"
+	"github.com/superhero-match/consumer-update-media/cmd/consumer/model"
 	dbm "github.com/superhero-match/consumer-update-media/internal/db/model"
 	esm "github.com/superhero-match/consumer-update-media/internal/es/model"
 )
