@@ -16,11 +16,12 @@ package es
 import (
 	"context"
 	"errors"
-	"github.com/olivere/elastic/v7"
+
+	elastic "github.com/olivere/elastic/v7"
 )
 
 // GetDocumentID fetches document source id, it is needed for update function.
-func (es *ES) GetDocumentID(superheroID string) (string, error) {
+func (es *es) GetDocumentID(superheroID string) (string, error) {
 	q := elastic.NewTermQuery("superhero_id", superheroID)
 
 	searchResult, err := es.Client.Search().

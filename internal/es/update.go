@@ -15,13 +15,14 @@ package es
 
 import (
 	"context"
+
 	"github.com/superhero-match/consumer-update-media/internal/es/model"
 )
 
 const mainProfilePicturePosition = int64(0)
 
 // UpdateProfilePicture updates profile picture.
-func (es *ES) UpdateProfilePicture(superheroID string, pp model.ProfilePicture) error {
+func (es *es) UpdateProfilePicture(superheroID string, pp model.ProfilePicture) error {
 	superhero, err := es.GetSuperhero(superheroID)
 	if err != nil {
 		return err
@@ -54,7 +55,7 @@ func (es *ES) UpdateProfilePicture(superheroID string, pp model.ProfilePicture) 
 	return updateProfilePics(es, sourceID, superhero.ProfilePictures, pp)
 }
 
-func updateProfilePics(es *ES, sourceID string, pps []model.ProfilePicture, pp model.ProfilePicture) error {
+func updateProfilePics(es *es, sourceID string, pps []model.ProfilePicture, pp model.ProfilePicture) error {
 	_, err := es.Client.Update().
 		Index(es.Index).
 		Id(sourceID).
@@ -70,13 +71,13 @@ func updateProfilePics(es *ES, sourceID string, pps []model.ProfilePicture, pp m
 	return nil
 }
 
-func updateMainProfilePic(es *ES, sourceID string, pp model.ProfilePicture) error {
+func updateMainProfilePic(es *es, sourceID string, pp model.ProfilePicture) error {
 	_, err := es.Client.Update().
 		Index(es.Index).
 		Id(sourceID).
 		Doc(map[string]interface{}{
 			"main_profile_pic_url": pp.URL,
-			"updated_at":   pp.CreatedAt,
+			"updated_at":           pp.CreatedAt,
 		}).
 		Do(context.Background())
 	if err != nil {

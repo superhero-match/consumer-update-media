@@ -18,14 +18,13 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/superhero-match/consumer-update-media/internal/es/model"
+	elastic "github.com/olivere/elastic/v7"
 
-	"github.com/olivere/elastic/v7"
+	"github.com/superhero-match/consumer-update-media/internal/es/model"
 )
 
-// CheckEmailExists checks if document of type superhero in superheros index exists
-// and if so, if the superhero is blocked.
-func (es *ES) GetSuperhero(superheroID string) (s *model.Superhero, err error) {
+// GetSuperhero fetches Superhero.
+func (es *es) GetSuperhero(superheroID string) (s *model.Superhero, err error) {
 	q := elastic.NewTermQuery("superhero_id", superheroID)
 
 	fmt.Println()
