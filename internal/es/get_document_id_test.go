@@ -15,10 +15,11 @@
 package es
 
 import (
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestEs_GetDocumentID(t *testing.T) {
