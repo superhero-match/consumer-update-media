@@ -11,6 +11,7 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package consumer
 
 import (
@@ -21,5 +22,5 @@ import (
 
 // CommitMessages commits message.
 func (c *consumer) CommitMessages(ctx context.Context, m kafka.Message) error {
-	return c.Consumer.CommitMessages(ctx, m)
+	return c.reader.CommitMessages(ctx, m)
 }

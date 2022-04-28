@@ -11,6 +11,7 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package consumer
 
 import (
@@ -21,5 +22,5 @@ import (
 
 // FetchMessage fetches a message from Kafka.
 func (c *consumer) FetchMessage(ctx context.Context) (kafka.Message, error) {
-	return c.Consumer.FetchMessage(ctx)
+	return c.reader.FetchMessage(ctx)
 }

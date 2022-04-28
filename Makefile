@@ -1,5 +1,6 @@
 prepare:
 	go mod download
+	go mod tidy
 
 run:
 	go build -o bin/main cmd/consumer/main.go
@@ -8,6 +9,10 @@ run:
 build:
 	CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o bin/main cmd/consumer/main.go
 	chmod +x bin/main
+
+tests:
+	go test ./... -v -coverpkg=./... -coverprofile=profile.cov ./...
+	go tool cover -func profile.cov
 
 dkb:
 	docker build -t consumer-update-media .
@@ -43,4 +48,4 @@ db-ssh:
 es-ssh:
 	docker exec -it es /bin/bash
 
-PHONY: prepare build dkb dkr launch cr-log db-log es-log cr-ssh db-ssh es-ssh rmc rmi clear
+PHONY: prepare run build tests dkb dkr launch cr-log db-log es-log cr-ssh db-ssh es-ssh rmc rmi clear

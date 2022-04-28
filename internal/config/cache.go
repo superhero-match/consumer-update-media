@@ -11,11 +11,12 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package config
 
 // Cache holds all the configuration settings for the Redis client.
 type Cache struct {
-	Address                string `env:"REDIS_ADDRESS" yaml:"address" default:"192.168.1.229"`
+	Address                string `env:"REDIS_ADDRESS" yaml:"address" default:"localhost"`
 	Port                   string `env:"REDIS_PORT" yaml:"port" default:":6379"`
 	Password               string `env:"REDIS_PASSWORD" yaml:"password" default:"Awesome85**"`
 	DB                     int    `env:"REDIS_DB" yaml:"db" default:"0"`

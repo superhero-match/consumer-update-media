@@ -11,16 +11,21 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-package health
+
+package db
 
 import (
-	"net/http"
+	"github.com/superhero-match/consumer-update-media/internal/db/model"
 )
 
-// ShutdownHealthServer sends shutdown signal to health server. This shutdown signal is sent only when consumer
-// is panicking and is about to be shutdown to notify loadbalancer that consumer is un-healthy.
-func (c *Client) ShutdownHealthServer() error {
-	_, err := http.Post(c.HealthServerURL, c.ContentType, nil)
+// StoreProfilePicture saves new profile picture.
+func (db *db) StoreProfilePicture(pp model.ProfilePicture) error {
+	_, err := db.stmtInsertNewProfilePicture.Exec(
+		pp.SuperheroID,
+		pp.URL,
+		pp.Position,
+		pp.CreatedAt,
+	)
 	if err != nil {
 		return err
 	}

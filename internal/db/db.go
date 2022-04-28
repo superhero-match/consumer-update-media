@@ -11,15 +11,13 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package db
 
 import (
-	"database/sql"
-	"fmt"
-
 	_ "github.com/go-sql-driver/mysql" // MySQL driver.
+	"github.com/jmoiron/sqlx"
 
-	"github.com/superhero-match/consumer-update-media/internal/config"
 	"github.com/superhero-match/consumer-update-media/internal/db/model"
 )
 
@@ -30,34 +28,19 @@ type DB interface {
 
 // db holds the database connection.
 type db struct {
-	DB                          *sql.DB
-	stmtInsertNewProfilePicture *sql.Stmt
+	dtbs                        *sqlx.DB
+	stmtInsertNewProfilePicture *sqlx.Stmt
 }
 
-// NewDB returns database.
-func NewDB(cfg *config.Config) (dbs DB, err error) {
-	dtbs, err := sql.Open(
-		"mysql",
-		fmt.Sprintf(
-			"%s:%s@tcp(%s:%d)/%s",
-			cfg.DB.User,
-			cfg.DB.Password,
-			cfg.DB.Host,
-			cfg.DB.Port,
-			cfg.DB.Name,
-		),
-	)
-	if err != nil {
-		return nil, err
-	}
-
-	stmtIns, err := dtbs.Prepare(`call insert_new_profile_picture(?,?,?,?)`)
+// New returns database.
+func New(dtbs *sqlx.DB) (dbs DB, err error) {
+	stmtIns, err := dtbs.Preparex("call insert_new_profile_picture(?,?,?,?)")
 	if err != nil {
 		return nil, err
 	}
 
 	return &db{
-		DB:                          dtbs,
+		dtbs:                        dtbs,
 		stmtInsertNewProfilePicture: stmtIns,
 	}, nil
 }

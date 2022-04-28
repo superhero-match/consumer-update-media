@@ -4,16 +4,37 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b306ec28-984d-4a25-ae6c-6a599efcc8ed" name="Default Changelist" comment="">
+    <list default="true" id="16824160-0040-4a73-a19a-1f16c13bdbb5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/consumer-update-media.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/consumer-update-media.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9099d5-7e78-4c27-9965-8dcac1f99ff1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9099d5-7e78-4c27-9965-8dcac1f99ff1/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9099d5-7e78-4c27-9965-8dcac1f99ff1/storage_v2/_src_/schema/municipality.fET0vQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9099d5-7e78-4c27-9965-8dcac1f99ff1/storage_v2/_src_/schema/municipality.fET0vQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9099d5-7e78-4c27-9965-8dcac1f99ff1/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9099d5-7e78-4c27-9965-8dcac1f99ff1/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9099d5-7e78-4c27-9965-8dcac1f99ff1/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ACER.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/consumer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/consumer/model/profile_picture.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/model/profile_picture.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/consumer/reader/read.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/reader/read.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/consumer/reader/reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/reader/reader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/health/controller/controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/health/controller/controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/health/controller/health.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/health/controller/health.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/health/controller/shutdown.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/health/controller/shutdown.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/health/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/health/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/health/controller/controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/health/controller/health.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/health/controller/shutdown.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/health/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/cache/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/cache.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/cache/delete.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/delete.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/config/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/cache.go" afterDir="false" />
@@ -21,62 +42,28 @@
       <change beforePath="$PROJECT_DIR$/internal/config/consumer.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/consumer.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/config/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/config/es.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/es.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/health.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/health.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/config/health.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/consumer/close.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/consumer/close.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/consumer/commit.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/consumer/commit.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/consumer/consumer.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/consumer/consumer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/consumer/fetch.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/consumer/fetch.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/consumer/model/profile_picture.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/consumer/model/profile_picture.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/db/model/profile_picture.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/model/profile_picture.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/db/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/store.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/db/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/store_profile_picture.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/es/es.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/es/es.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/es/get.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/es/get.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/es/id.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/es/id.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/es/get.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/es/get_superhero.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/es/id.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/es/get_document_id.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/es/model/profile_picture.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/es/model/profile_picture.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/es/model/superhero.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/es/model/superhero.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/es/update.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/es/update.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/health/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/health/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/health/shutdown.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/health/shutdown.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/es/update.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/es/update_profile_picture.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/health/client.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/health/shutdown.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="municipality@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="municipality@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="municipality@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="municipality: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="municipality@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="municipality: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="routines" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-    </expand>
-    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -89,78 +76,134 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GoLibraries">
-    <option name="urls">
-      <list>
-        <option value="file://$PROJECT_DIR$/../../../.." />
-      </list>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="1ZZCMU7C1svc9grLDdjphTEZ3oJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectId" id="28Q1O42SJPhtX3VPmz3alIDoOrn" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="DefaultGoTemplateProperty" value="Go File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="configurable..is.expanded" value="false" />
-    <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
-    <property name="go.format.on.save.advertiser.fired" value="true" />
-    <property name="go.formatter.settings.were.checked" value="true" />
-    <property name="go.import.settings.migrated" value="true" />
-    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="go.sdk.automatically.set" value="true" />
-    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
-  </component>
-  <component name="RunManager" selected="Go Build.go build github.com/superhero-match/consumer-update-media/cmd/consumer">
-    <configuration name="go build github.com/superhero-match/consumer-update-media/cmd/consumer" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/nikolajuskarpovas/go/src/github.com/superhero-match/consumer-update-media",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RunManager" selected="Go Test.TestCache_DeleteSuperheroFail in github.com/superhero-match/consumer-update-media/internal/cache">
+    <configuration name="TestCache_DeleteSuperhero in github.com/superhero-match/consumer-update-media/internal/cache" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="consumer-update-media" />
-      <working_directory value="$PROJECT_DIR$/" />
+      <working_directory value="$PROJECT_DIR$/internal/cache" />
+      <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/superhero-match/consumer-update-media/cmd/consumer" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/cmd/consumer/main.go" />
+      <package value="github.com/superhero-match/consumer-update-media/internal/cache" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestCache_DeleteSuperhero\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build github.com/superhero-match/consumer-update-media/cmd/health" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCache_DeleteSuperheroFail in github.com/superhero-match/consumer-update-media/internal/cache" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="consumer-update-media" />
-      <working_directory value="$PROJECT_DIR$/" />
+      <working_directory value="$PROJECT_DIR$/internal/cache" />
+      <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/superhero-match/consumer-update-media/cmd/health" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/cmd/health/main.go" />
+      <package value="github.com/superhero-match/consumer-update-media/internal/cache" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestCache_DeleteSuperheroFail\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestConfig_New in github.com/superhero-match/consumer-update-media/internal/config" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="consumer-update-media" />
+      <working_directory value="$PROJECT_DIR$/internal/config" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/superhero-match/consumer-update-media/internal/config" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestConfig_New\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDb_StoreProfilePicture in github.com/superhero-match/consumer-update-media/internal/db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="consumer-update-media" />
+      <working_directory value="$PROJECT_DIR$/internal/db" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/superhero-match/consumer-update-media/internal/db" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestDb_StoreProfilePicture\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDb_StoreProfilePictureFail in github.com/superhero-match/consumer-update-media/internal/db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="consumer-update-media" />
+      <working_directory value="$PROJECT_DIR$/internal/db" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/superhero-match/consumer-update-media/internal/db" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestDb_StoreProfilePictureFail\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build github.com/superhero-match/consumer-update-media/cmd/consumer" />
-        <item itemvalue="Go Build.go build github.com/superhero-match/consumer-update-media/cmd/health" />
+        <item itemvalue="Go Test.TestCache_DeleteSuperheroFail in github.com/superhero-match/consumer-update-media/internal/cache" />
+        <item itemvalue="Go Test.TestCache_DeleteSuperhero in github.com/superhero-match/consumer-update-media/internal/cache" />
+        <item itemvalue="Go Test.TestConfig_New in github.com/superhero-match/consumer-update-media/internal/config" />
+        <item itemvalue="Go Test.TestDb_StoreProfilePictureFail in github.com/superhero-match/consumer-update-media/internal/db" />
+        <item itemvalue="Go Test.TestDb_StoreProfilePicture in github.com/superhero-match/consumer-update-media/internal/db" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/consumer_update_media$TestEs_GetSuperhero_in_github_com_superhero_match_consumer_update_media_internal_es.out" NAME="TestEs_GetSuperhero in github.com/superhero-match/consumer-update-media/internal/es Coverage Results" MODIFIED="1651143340698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/consumer_update_media$TestEs_UpdateProfilePicture_in_github_com_superhero_match_consumer_update_media_internal_es.out" NAME="TestEs_UpdateProfilePicture in github.com/superhero-match/consumer-update-media/internal/es Coverage Results" MODIFIED="1651143762936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/consumer_update_media$TestCache_DeleteSuperheroFail_in_github_com_superhero_match_consumer_update_media_internal_cache.out" NAME="TestCache_DeleteSuperheroFail in github.com/superhero-match/consumer-update-media/internal/cache Coverage Results" MODIFIED="1651149813282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/consumer_update_media$TestDb_StoreProfilePictureFail_in_github_com_superhero_match_consumer_update_media_internal_db.out" NAME="TestDb_StoreProfilePictureFail in github.com/superhero-match/consumer-update-media/internal/db Coverage Results" MODIFIED="1651146461799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/consumer_update_media$TestCache_DeleteSuperhero_in_github_com_superhero_match_consumer_update_media_internal_cache.out" NAME="TestCache_DeleteSuperhero in github.com/superhero-match/consumer-update-media/internal/cache Coverage Results" MODIFIED="1651149203682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/consumer_update_media$TestConfig_New_in_github_com_superhero_match_consumer_update_media_internal_config.out" NAME="TestConfig_New in github.com/superhero-match/consumer-update-media/internal/config Coverage Results" MODIFIED="1651148308970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/consumer_update_media$TestEs_GetDocumentID_in_github_com_superhero_match_consumer_update_media_internal_es.out" NAME="TestEs_GetDocumentID in github.com/superhero-match/consumer-update-media/internal/es Coverage Results" MODIFIED="1651143039506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/consumer_update_media$TestDb_StoreProfilePicture_in_github_com_superhero_match_consumer_update_media_internal_db.out" NAME="TestDb_StoreProfilePicture in github.com/superhero-match/consumer-update-media/internal/db Coverage Results" MODIFIED="1651146191009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

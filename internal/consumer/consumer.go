@@ -11,6 +11,7 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package consumer
 
 import (
@@ -31,11 +32,11 @@ type Consumer interface {
 
 // consumer holds Kafka consumer related data.
 type consumer struct {
-	Consumer *kafka.Reader
+	reader *kafka.Reader
 }
 
-// NewConsumer configures Kafka consumer that consumes from configured topic.
-func NewConsumer(cfg *config.Config) (Consumer, error) {
+// New configures Kafka consumer that consumes from configured topic.
+func New(cfg *config.Config) Consumer {
 	r := kafka.NewReader(kafka.ReaderConfig{
 		Brokers:       cfg.Consumer.Brokers,
 		Topic:         cfg.Consumer.Topic,
@@ -45,6 +46,6 @@ func NewConsumer(cfg *config.Config) (Consumer, error) {
 	})
 
 	return &consumer{
-		Consumer: r,
-	}, nil
+		reader: r,
+	}
 }

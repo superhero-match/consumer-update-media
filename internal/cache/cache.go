@@ -11,14 +11,11 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package cache
 
 import (
-	"fmt"
-
 	"github.com/go-redis/redis"
-
-	"github.com/superhero-match/consumer-update-media/internal/config"
 )
 
 // Cache interface defines cache methods.
@@ -28,26 +25,12 @@ type Cache interface {
 
 // cache is the Redis client.
 type cache struct {
-	Redis *redis.Client
+	Redis redis.Cmdable
 }
 
-// NewCache creates a client connection to Redis.
-func NewCache(cfg *config.Config) (c Cache, err error) {
-	client := redis.NewClient(&redis.Options{
-		Addr:         fmt.Sprintf("%s%s", cfg.Cache.Address, cfg.Cache.Port),
-		Password:     cfg.Cache.Password,
-		DB:           cfg.Cache.DB,
-		PoolSize:     cfg.Cache.PoolSize,
-		MinIdleConns: cfg.Cache.MinimumIdleConnections,
-		MaxRetries:   cfg.Cache.MaximumRetries,
-	})
-
-	_, err = client.Ping().Result()
-	if err != nil {
-		return nil, err
-	}
-
+// New creates a client connection to Redis.
+func New(rc redis.Cmdable) Cache {
 	return &cache{
-		Redis: client,
-	}, nil
+		Redis: rc,
+	}
 }

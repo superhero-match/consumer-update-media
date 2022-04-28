@@ -11,11 +11,12 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package config
 
 // ES holds the configuration values for the Elasticsearch client.
 type ES struct {
-	Host    string `env:"ES_HOST" yaml:"host" default:"192.168.1.229"`
+	Host    string `env:"ES_HOST" yaml:"host" default:"localhost"`
 	Port    string `env:"ES_PORT" yaml:"port" default:"9200"`
 	Cluster string `env:"ES_CLUSTER" yaml:"cluster" default:"superheromatch"`
 	Index   string `env:"ES_INDEX" yaml:"index" default:"superhero"`

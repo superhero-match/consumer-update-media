@@ -11,23 +11,39 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-package db
+
+package es
 
 import (
-	"github.com/superhero-match/consumer-update-media/internal/db/model"
+	"context"
+	"encoding/json"
+
+	elastic "github.com/olivere/elastic/v7"
+
+	"github.com/superhero-match/consumer-update-media/internal/es/model"
 )
 
-// StoreProfilePicture saves new profile picture.
-func (db *db) StoreProfilePicture(pp model.ProfilePicture) error {
-	_, err := db.stmtInsertNewProfilePicture.Exec(
-		pp.SuperheroID,
-		pp.URL,
-		pp.Position,
-		pp.CreatedAt,
-	)
+// GetSuperhero fetches Superhero.
+func (es *es) GetSuperhero(superheroID string) (s *model.Superhero, err error) {
+	q := elastic.NewTermQuery("superhero_id", superheroID)
+
+	searchResult, err := es.Client.Search().
+		Index(es.Index).
+		Query(q).
+		Pretty(true).
+		Do(context.Background())
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	return nil
+	if searchResult.TotalHits() > 0 {
+		for _, hit := range searchResult.Hits.Hits {
+			err := json.Unmarshal(hit.Source, &s)
+			if err != nil {
+				return nil, err
+			}
+		}
+	}
+
+	return s, nil
 }

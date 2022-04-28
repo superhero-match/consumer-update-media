@@ -11,13 +11,13 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package reader
 
 import (
 	"go.uber.org/zap"
 
 	"github.com/superhero-match/consumer-update-media/internal/cache"
-	"github.com/superhero-match/consumer-update-media/internal/config"
 	"github.com/superhero-match/consumer-update-media/internal/consumer"
 	"github.com/superhero-match/consumer-update-media/internal/db"
 	"github.com/superhero-match/consumer-update-media/internal/es"
@@ -41,42 +41,15 @@ type reader struct {
 	SuggestionKeyFormat string
 }
 
-// NewReader configures Reader.
-func NewReader(cfg *config.Config) (r Reader, err error) {
-	dbs, err := db.NewDB(cfg)
-	if err != nil {
-		return nil, err
-	}
-
-	ch, err := cache.NewCache(cfg)
-	if err != nil {
-		return nil, err
-	}
-
-	e, err := es.NewES(cfg)
-	if err != nil {
-		return nil, err
-	}
-
-	c, err := consumer.NewConsumer(cfg)
-	if err != nil {
-		return nil, err
-	}
-
-	logger, err := zap.NewProduction()
-	if err != nil {
-		return nil, err
-	}
-
-	defer logger.Sync()
-
+// New configures Reader.
+func New(e es.ES, dtbs db.DB, c consumer.Consumer, ch cache.Cache, logger *zap.Logger, suggestionKeyFormat string) Reader {
 	return &reader{
-		DB:                  dbs,
+		DB:                  dtbs,
 		Cache:               ch,
 		ES:                  e,
 		Consumer:            c,
 		Logger:              logger,
 		TimeFormat:          timeFormat,
-		SuggestionKeyFormat: cfg.Cache.SuggestionKeyFormat,
-	}, nil
+		SuggestionKeyFormat: suggestionKeyFormat,
+	}
 }

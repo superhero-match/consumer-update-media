@@ -11,11 +11,12 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package config
 
 // DB holds the configuration values for the database.
 type DB struct {
-	Host     string `env:"DB_HOST" yaml:"host" default:"192.168.1.229"`
+	Host     string `env:"DB_HOST" yaml:"host" default:"localhost"`
 	Port     int    `env:"DB_PORT" yaml:"port" default:"3306"`
 	User     string `env:"DB_USER" yaml:"user" default:"dev"`
 	Password string `env:"DB_PASSWORD" yaml:"password" default:"Awesome85**"`

@@ -11,9 +11,10 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package consumer
 
 // Close closes Kafka consumer.
 func (c *consumer) Close() error {
-	return c.Consumer.Close()
+	return c.reader.Close()
 }
